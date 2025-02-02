@@ -1,0 +1,550 @@
+/* start variables */
+:root {
+  --main-color: #3D0D0B;
+  --socandary-color: #8AB9B1;
+}
+/* end variables */
+/* start global roles */
+
+a {
+  text-decoration: none;
+  color: white;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* تخصيص الخط الجانبي الكامل */
+::-webkit-scrollbar {
+  width: 12px; /* عرض الخط الجانبي */
+}
+
+/* تخصيص الخلفية */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* لون الخلفية */
+}
+
+/* تخصيص مقبض التمرير */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color); /* لون المقبض */
+  border-radius: 10px; /* جعل المقبض دائريًا */
+  border: 2px solid black; /* حد حول المقبض */
+}
+
+/* تغيير لون المقبض عند التمرير */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--socandary-color); /* لون المقبض عند التمرير */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end global roles */
+nav {
+  background-color: var(--main-color);
+  color: #EEE5D3;
+  /* border: 1px black solid; */
+}
+
+nav .container {
+  direction: rtl;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+   
+
+}
+nav img {
+  height: 50px;
+}
+
+#mainNav{
+  position: relative;
+}
+
+nav #mainNav a{
+  font-weight: bold;
+
+  color:#EEE5D3
+}
+
+nav #mainNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  nav #mainNav {
+    display: none; 
+  }
+}
+
+nav #firstitemstype {
+
+  position: absolute;
+  width: 100%;
+  right: 30%;
+  top: 35px;
+}
+
+
+  .ourstoreb{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  }
+
+.socendstore{
+  margin-top: -5px;
+  padding: 10px 20px;
+
+
+}
+.socendstore:hover{
+  background-color: var(--socandary-color);
+}
+
+.x{
+  display: none;
+  color: white;
+}
+
+.x:hover{
+  color: red;
+}
+
+
+
+
+nav #firstitemstype >li  > a{
+  padding:5px 0 ;
+}
+
+
+
+
+.subsubnav{
+  background-color: var(--socandary-color);
+  opacity: .9;
+  z-index: 29;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  right: 0;
+  position: absolute;
+}
+
+
+
+.subsubnav li{
+  display: none;
+  
+  text-align: center;
+  position: relative;
+  /* left: 0; */
+  flex-direction: column;
+  padding: 10px;
+}
+
+.subsubnav li img{
+  height: 100px;
+  border: 2px solid white;
+}
+
+nav #firstitemstype> li> a {
+  
+  padding-right: 10px;
+  background-color: var(--main-color);
+}
+
+nav #firstitemstype> li> a:hover + ul li  ,nav #firstitemstype> li> a + ul:hover li{
+  display: flex;
+}
+nav #firstitemstype> li> a + ul li:hover{
+  background-color: black;
+  
+}
+
+
+.subitem  {
+  display: flex;
+}
+
+
+
+nav #firstitemstype li {
+  width: 150px;
+}
+
+nav .container > ul > li > a {
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+}
+nav .container > ul > li > a:hover {
+  background-color: var(--socandary-color);
+}
+
+/* the sub li */
+nav .container > ul > li > ul {
+  /* edit this*/
+  margin-top: -1px;
+  display: flex;
+}
+
+nav .toggle-menu {
+  display: inline;
+}
+
+nav #socendNav {
+  padding-top: 10px;
+  position: absolute;
+  top: 0;
+  height: fit-content;
+  color: var(--main-color);
+  background-color: var(--main-color);
+  right: 0;
+  z-index: 1;
+  width: 200px;
+  display: none;
+}
+
+nav #socendNav  li:not(.subsubsocendnav li) {
+  padding: 10px 10px;
+}
+.firstItem{
+  margin-top: 20px;
+}
+
+
+#closeUl{
+  border:  2px solid white;
+  text-align: center;
+  margin: 0 10px;
+}
+
+#closeUl:hover i ,#closeUl:hover{
+  color:red;
+  border-color: red;
+
+}
+
+#closeUl i {
+  margin: 6px;
+  color: white;
+}
+
+
+#soceneditemstype > li:hover {
+  cursor: pointer;
+  background-color: var(--socandary-color);
+  padding: 15px 20px;
+}
+
+.socenditem:hover + ul ,.socenditem + ul:hover{
+display: inline;
+}
+
+.socenditem{
+  padding: 250px;
+}
+
+.socenditem:hover{
+  padding-right: 30px;
+}
+
+
+#soceneditemstype {
+  padding-top: 20px;
+  display: none;
+
+}
+#soceneditemstype li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+.subsubsocendnav {
+  display: none;
+}
+
+.subsubsocendnav img{
+height: 0;
+width: 0;
+}
+
+header {
+  background-image: url("../images/coffeeImage.jpg");
+  background-attachment: fixed;
+  background-position: center;
+}
+
+header .container {
+  height: calc(100vh - 50px);
+  text-align: center;
+  /* margin: auto 0; */
+}
+
+header .container h1 {
+  color: rgb(255, 0, 0);
+  margin-top: 0px;
+  padding: 120px 0 10px 0;
+  font-size: 45px;
+
+  /* background-color: ; */
+}
+
+header .container p {
+  color: white;
+  font-size:30px;
+}
+
+header .container #ourgoal {
+  margin-top: 10px;
+  padding: 40px 10px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.653);
+  border-radius: 20px;
+}
+
+
+
+#firstNav:hover + #firstitemstype , #firstitemstype:hover{
+  display: flex;
+  width: 100%;
+
+}
+
+#firstNav:hover i{
+  display: none;
+}
+
+#subsubsocendnav li{
+  padding: 0
+}
+
+.item{
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.item:hover{
+  background-color: var(--socandary-color);
+}
+
+#secOne{
+  background-color: var(--main-color);
+  color:#EEE5D3
+
+}
+
+#secOne .container p {
+  padding-top: 20px;
+  font-size: 25px;
+}
+
+#secOne .container {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 20px;
+}
+
+
+#secTwo {
+  position: relative;
+  padding: 0;
+  overflow: hidden; /* إخفاء العناصر التي تخرج عن الحاوية */
+}
+
+#secTwo .container {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* تأثير التحرك */
+  justify-content: space-between;
+}
+
+.custmorD {
+  min-width: 30%; /* عرض العنصر 30% لتتمكن من عرض 3 عناصر في وقت واحد */
+  margin: 0 10px;
+  box-sizing: border-box;
+}
+
+
+
+.rightArrow, .leftArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.leftArrow {
+  left: 10px;
+}
+
+.rightArrow{
+  right: 10px;
+}
+
+.rightArrow:hover, .leftArrow:hover {
+  background-color: var(--socandary-color);
+}
+
+
+
+
+
+#whyUs {
+  font-size: 40px;
+}
+
+/* #secTwo {
+ background-image: url("../images/coffeeImage.jpg");
+  background-attachment: fixed;
+  background-position: center; 
+}
+*/
+
+#secTwo .container {
+  background-color: white;
+  text-align: center;
+  padding: 40px 10px;
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* تأثير التحرك */
+  justify-content: space-between;
+}
+
+#secTwo .container .custmorD {
+  text-align: center;
+  
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 350px;
+}
+
+#secTwo .container img {
+  padding-top: 10px;
+  height: 60px;
+  text-align: center;
+}
+
+#secTwo .container h2 {
+  padding: 5px 0 20px;
+}
+
+#secTwo .container .custmorD .theOpinion {
+  padding: 0 0 10px;
+}
+
+footer{
+  padding: 50px 0;
+  background-color: #B47F55;
+  text-align: center;
+}
+
+ footer p {
+  color: #EEE5D3;
+}
+
+footer h2{
+  color:var(--main-color)
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+footer .container .logoN{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+footer .container .logoN img{
+  height: 40px;
+}
+footer .container .logoN h2{
+  font-size: 40px;
+  margin: 0 10px;
+  
+}
+
+footer .container .footerD{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer ul li img {
+  width: 20px;
+}
+footer .container .footerD ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .container .footerD li{
+  margin: 10px 5px 10px 5px ;
+
+}
+
+footer .container .footerD i{
+  color: #EEE5D3;
+  margin: 20px 10px;
+  font-size: 30px;
+}
+
+footer .container .footerD i:hover{
+  color: var(--socandary-color);
+}
+
+
